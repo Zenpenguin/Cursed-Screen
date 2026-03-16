@@ -92,7 +92,7 @@
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="subtitle">Cursed Screen &mdash; Last updated: March 6, 2026</p>
+        <p class="subtitle">Cursed Screen &mdash; Last updated: March 16, 2026</p>
 
         <div class="highlight">
             <p style="margin-bottom:0"><strong>In short:</strong> Cursed Screen does not collect, transmit, or share any personal data. All information stays entirely on your device.</p>
@@ -100,13 +100,15 @@
 
         <h2>1. Information Collection</h2>
         <p>Cursed Screen does <strong>not</strong> collect any personal information. The app does not require account creation, does not ask for your name, email, or any identifying details, and does not use analytics or tracking of any kind.</p>
-        <p>The only data the app processes is your <strong>cumulative daily screen-on time</strong>, which is calculated locally on your device and never leaves it.</p>
+        <p>The only data the app processes is your <strong>screen-on time</strong> and <strong>app usage</strong>, which are calculated locally on your device and never leave it.</p>
 
         <h2>2. Permissions Used</h2>
         <p>The app requests the following Android permissions to function:</p>
         <ul>
-            <li><strong>Usage Access (PACKAGE_USAGE_STATS)</strong> &mdash; Used to read device usage statistics so the app can determine your daily screen-on time. This data is processed locally and is never transmitted off-device.</li>
+            <li><strong>Usage Access (PACKAGE_USAGE_STATS)</strong> &mdash; Used to determine your daily screen-on time and to detect which app is currently in the foreground. Foreground detection is needed for the App Whitelist feature (hiding the overlay on apps you choose) and for hiding the overlay during phone calls. This data is processed locally and is never transmitted off-device.</li>
             <li><strong>Display Over Other Apps (SYSTEM_ALERT_WINDOW)</strong> &mdash; Used to render the visual overlay on screen edges. The overlay is non-interactive and never blocks touch input.</li>
+            <li><strong>Accessibility Service</strong> &mdash; Used solely to display the overlay in a way that does not trigger "screen overlay detected" warnings in banking and payment apps. The accessibility service does <strong>not</strong> read your screen content, does <strong>not</strong> monitor keystrokes or passwords, and does <strong>not</strong> collect or transmit any data. It requests zero accessibility events and has no access to window content. This permission is optional &mdash; the app works without it, but some apps may show overlay interference warnings.</li>
+            <li><strong>Notifications (POST_NOTIFICATIONS)</strong> &mdash; Used to display a persistent notification while the background service is running. Android requires this notification to keep the service alive. No promotional or marketing notifications are ever sent.</li>
             <li><strong>Foreground Service</strong> &mdash; Used to keep the screen-time tracker running reliably in the background. This service only tracks elapsed screen-on time locally.</li>
             <li><strong>Receive Boot Completed</strong> &mdash; Used to restart the tracking service after device reboot so tracking remains continuous without manual intervention.</li>
         </ul>
@@ -116,7 +118,10 @@
         <p>All app data is stored locally on your device using Android's SharedPreferences. This includes:</p>
         <ul>
             <li>Daily cumulative screen-on time (resets at midnight)</li>
-            <li>User preferences and settings</li>
+            <li>28-day usage history for the statistics screen</li>
+            <li>User preferences and settings (theme, mode, grace period, etc.)</li>
+            <li>App whitelist (list of package names you have chosen to exclude from the overlay)</li>
+            <li>Onboarding and warning acknowledgment flags</li>
         </ul>
         <p>No data is stored on external servers, cloud services, or any remote infrastructure. Uninstalling the app permanently deletes all stored data.</p>
 
