@@ -100,12 +100,12 @@
 
         <h2>1. Information Collection</h2>
         <p>Cursed Screen does <strong>not</strong> collect any personal information. The app does not require account creation, does not ask for your name, email, or any identifying details, and does not use analytics or tracking of any kind.</p>
-        <p>The only data the app processes is your <strong>screen-on time</strong> and <strong>app usage</strong>, which are calculated locally on your device and never leave it.</p>
+        <p>The only data the app processes is your <strong>screen-on time</strong>, which is calculated locally on your device using its own timer and never leaves it. The app does not read or store your app usage history.</p>
 
         <h2>2. Permissions Used</h2>
         <p>The app requests the following Android permissions to function:</p>
         <ul>
-            <li><strong>Usage Access (PACKAGE_USAGE_STATS)</strong> &mdash; Used to determine your daily screen-on time and to detect which app is currently in the foreground. Foreground detection is needed for the App Whitelist feature (hiding the overlay on apps you choose) and for hiding the overlay during phone calls. This data is processed locally and is never transmitted off-device.</li>
+            <li><strong>Usage Access (PACKAGE_USAGE_STATS)</strong> &mdash; Used to detect which app is currently in the foreground. This is needed for the App Whitelist feature (hiding the overlay on apps you choose) and for hiding the overlay during phone calls. No usage data is stored &mdash; the app checks the foreground app in real-time and immediately discards the result.</li>
             <li><strong>Display Over Other Apps (SYSTEM_ALERT_WINDOW)</strong> &mdash; Used to render the visual overlay on screen edges. The overlay is non-interactive and never blocks touch input.</li>
             <li><strong>Accessibility Service</strong> &mdash; Used solely to display the overlay in a way that does not trigger "screen overlay detected" warnings in banking and payment apps. The accessibility service does <strong>not</strong> read your screen content, does <strong>not</strong> monitor keystrokes or passwords, and does <strong>not</strong> collect or transmit any data. It requests zero accessibility events and has no access to window content. This permission is optional &mdash; the app works without it, but some apps may show overlay interference warnings.</li>
             <li><strong>Notifications (POST_NOTIFICATIONS)</strong> &mdash; Used to display a persistent notification while the background service is running. Android requires this notification to keep the service alive. No promotional or marketing notifications are ever sent.</li>
@@ -117,10 +117,9 @@
         <h2>3. Data Storage</h2>
         <p>All app data is stored locally on your device using Android's SharedPreferences. This includes:</p>
         <ul>
-            <li>Daily cumulative screen-on time (resets at midnight)</li>
-            <li>28-day usage history for the statistics screen</li>
+            <li>Daily cumulative screen-on time as measured by the app's own timer (resets at midnight)</li>
             <li>User preferences and settings (theme, mode, grace period, etc.)</li>
-            <li>App whitelist (list of package names you have chosen to exclude from the overlay)</li>
+            <li>App whitelist (list of apps you have chosen to exclude from the overlay)</li>
             <li>Onboarding and warning acknowledgment flags</li>
         </ul>
         <p>No data is stored on external servers, cloud services, or any remote infrastructure. Uninstalling the app permanently deletes all stored data.</p>
