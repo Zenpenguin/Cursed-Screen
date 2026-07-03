@@ -92,14 +92,15 @@
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="subtitle">Cursed Screen &mdash; Last updated: May 20, 2026</p>
+        <p class="subtitle">Cursed Screen &mdash; Last updated: July 3, 2026</p>
 
         <div class="highlight">
             <p style="margin-bottom:0"><strong>In short:</strong> Cursed Screen does not collect personal information. The app sends anonymous usage analytics and crash reports to Firebase (a Google service) to help us improve the product and fix bugs. No advertising, no third-party data sharing.</p>
         </div>
 
         <h2>1. Information Collection</h2>
-        <p>Cursed Screen does <strong>not</strong> collect any personally identifying information. The app does not require account creation, does not ask for your name, email, phone number, or any identifying details, and does not access your contacts, photos, messages, browsing history, microphone, camera, or location.</p>
+        <p>Cursed Screen does <strong>not</strong> collect any personally identifying information. The app does not require account creation, does not ask for your email, phone number, or any identifying details, and does not access your contacts, photos, messages, browsing history, microphone, camera, or location.</p>
+        <p>During setup, the app may ask for your first name to personalize the on-screen messages. Providing it is optional. The name stays on your device in memory only &mdash; it is never saved, never transmitted, and not linked to any identifier. Our analytics record only whether a name was entered, never the name itself.</p>
         <p>The app does send anonymous usage analytics and crash diagnostics to Firebase &mdash; see Sections 2 and 5.</p>
 
         <h2>2. Analytics and Crash Reporting</h2>
@@ -121,7 +122,7 @@
             <li><strong>Usage Access (PACKAGE_USAGE_STATS)</strong> &mdash; Used to detect which app is currently in the foreground (for the App Whitelist feature and to hide the overlay during phone calls) and to measure your overall daily screen-on time. The names of specific apps you use are not sent off-device; only your overall daily screen-on time is included in the analytics described in Section 2.</li>
             <li><strong>Display Over Other Apps (SYSTEM_ALERT_WINDOW)</strong> &mdash; Used to render the visual overlay on screen edges. The overlay is non-interactive and never blocks touch input.</li>
             <li><strong>Accessibility Service</strong> &mdash; Used solely to display the overlay in a way that does not interfere with other apps. The accessibility service does <strong>not</strong> read your screen content, does <strong>not</strong> monitor keystrokes or passwords, and does <strong>not</strong> collect or transmit any data of its own. It requests zero accessibility events and has no access to window content. This permission is optional &mdash; the app works without it.</li>
-            <li><strong>Notifications (POST_NOTIFICATIONS)</strong> &mdash; Used to display a persistent notification while the background service is running (Android requires this to keep the service alive) and to remind you about your free-trial status. No third-party or marketing notifications are sent.</li>
+            <li><strong>Notifications (POST_NOTIFICATIONS)</strong> &mdash; Used to display a persistent notification while the background service is running (Android requires this to keep the service alive), to remind you about your free-trial status, and occasionally to invite you to rate the app. These come from the app itself; we do not send third-party or advertising notifications. The rating invitation uses its own notification channel, so you can turn it off on its own without affecting the others.</li>
             <li><strong>Foreground Service</strong> &mdash; Used to keep the screen-time tracker running reliably in the background.</li>
             <li><strong>Receive Boot Completed</strong> &mdash; Used to restart the tracking service after device reboot so tracking remains continuous.</li>
             <li><strong>Billing</strong> &mdash; Used to process in-app purchases and subscriptions through Google Play.</li>
