@@ -92,7 +92,7 @@
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="subtitle">Cursed Screen &mdash; Last updated: July 3, 2026</p>
+        <p class="subtitle">Cursed Screen &mdash; Last updated: July 16, 2026</p>
 
         <div class="highlight">
             <p style="margin-bottom:0"><strong>In short:</strong> Cursed Screen does not collect personal information. The app sends anonymous usage analytics and crash reports to Firebase (a Google service) to help us improve the product and fix bugs. No advertising, no third-party data sharing.</p>
@@ -109,21 +109,22 @@
         <ul>
             <li>App events (which screens you view, when you change modes or themes, when permissions are granted, when the overlay is active, when a purchase happens).</li>
             <li>Stack traces and technical state when the app crashes or detects a malfunction.</li>
-            <li>App settings (mode, theme category, tracking basis, grace period).</li>
-            <li>Daily screen-on time as measured by the app's timer.</li>
+            <li>App settings (mode, theme, tracking basis, grace period).</li>
+            <li>Daily screen-time totals as measured by the app: your overall daily screen-on time, the combined daily time spent in the apps on your Cursed List (always as a single group total &mdash; never per-app times and never app names), the number of apps on your Cursed List, and the baseline and "time saved" figures the app derives from these totals.</li>
             <li>Device model, Android version, app version, locale.</li>
             <li>A random per-install identifier (Firebase "app instance ID") that's not linked to your name, email, or any account.</li>
         </ul>
-        <p>What's <strong>not</strong> collected by analytics: nudge text content, the names of apps you whitelist, your screen content, or any personally identifying information.</p>
+        <p>What's <strong>not</strong> collected by analytics: nudge text content, the names of the apps on your Cursed List, per-app usage times, your screen content, or any personally identifying information.</p>
 
         <h2>3. Permissions Used</h2>
         <p>The app requests the following Android permissions to function:</p>
         <ul>
-            <li><strong>Usage Access (PACKAGE_USAGE_STATS)</strong> &mdash; Used to detect which app is currently in the foreground (for the App Whitelist feature and to hide the overlay during phone calls) and to measure your overall daily screen-on time. The names of specific apps you use are not sent off-device; only your overall daily screen-on time is included in the analytics described in Section 2.</li>
+            <li><strong>Usage Access (PACKAGE_USAGE_STATS)</strong> &mdash; Used to detect which app is currently in the foreground (so the overlay appears only while you are in an app on your Cursed List, and stays hidden during phone calls) and to measure your daily screen time. The names of specific apps you use are not sent off-device; only daily time totals &mdash; your overall screen-on time and the combined total for your Cursed List as a group &mdash; are included in the analytics described in Section 2.</li>
             <li><strong>Display Over Other Apps (SYSTEM_ALERT_WINDOW)</strong> &mdash; Used to render the visual overlay on screen edges. The overlay is non-interactive and never blocks touch input.</li>
             <li><strong>Accessibility Service</strong> &mdash; Used solely to display the overlay in a way that does not interfere with other apps. The accessibility service does <strong>not</strong> read your screen content, does <strong>not</strong> monitor keystrokes or passwords, and does <strong>not</strong> collect or transmit any data of its own. It requests zero accessibility events and has no access to window content. This permission is optional &mdash; the app works without it.</li>
             <li><strong>Notifications (POST_NOTIFICATIONS)</strong> &mdash; Used to display a persistent notification while the background service is running (Android requires this to keep the service alive), to remind you about your free-trial status, and occasionally to invite you to rate the app. These come from the app itself; we do not send third-party or advertising notifications. The rating invitation uses its own notification channel, so you can turn it off on its own without affecting the others.</li>
             <li><strong>Foreground Service</strong> &mdash; Used to keep the screen-time tracker running reliably in the background.</li>
+            <li><strong>Ignore Battery Optimizations (REQUEST_IGNORE_BATTERY_OPTIMIZATIONS)</strong> &mdash; The app may ask you to exempt it from battery optimization so Android does not shut down the reminder service in the background. Granting it is optional and involves no data collection.</li>
             <li><strong>Receive Boot Completed</strong> &mdash; Used to restart the tracking service after device reboot so tracking remains continuous.</li>
             <li><strong>Billing</strong> &mdash; Used to process in-app purchases and subscriptions through Google Play.</li>
         </ul>
@@ -132,9 +133,9 @@
         <h2>4. Data Storage</h2>
         <p>App settings and on-device state are stored locally using Android's SharedPreferences. This includes:</p>
         <ul>
-            <li>Daily cumulative screen-on time as measured by the app's timer.</li>
+            <li>Daily screen-time history as measured by the app.</li>
             <li>User preferences and settings (theme, mode, grace period, etc.).</li>
-            <li>App whitelist &mdash; the list of apps you have chosen to exclude from the overlay. The names of whitelisted apps stay on your device and are never transmitted off-device.</li>
+            <li>Cursed List &mdash; the list of apps you have chosen to curse. The names of the apps on your list stay on your device and are never transmitted off-device.</li>
             <li>Onboarding and warning acknowledgment flags.</li>
         </ul>
         <p>The anonymous analytics and crash data described in Section 2 are processed by Google Firebase. Uninstalling the app permanently deletes all on-device data.</p>
