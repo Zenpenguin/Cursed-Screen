@@ -92,16 +92,16 @@
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="subtitle">Cursed Screen &mdash; Last updated: July 16, 2026</p>
+        <p class="subtitle">Cursed Screen &mdash; Last updated: July 25, 2026</p>
 
         <div class="highlight">
-            <p style="margin-bottom:0"><strong>In short:</strong> Cursed Screen does not collect personal information. The app sends anonymous usage analytics and crash reports to Firebase (a Google service) to help us improve the product and fix bugs. No advertising, no third-party data sharing.</p>
+            <p style="margin-bottom:0"><strong>In short:</strong> Cursed Screen collects no personal information, with one optional exception: if you use Child Lock and ask us to email you a PIN reset code, we hold that email address just long enough to send it and delete it within 24 hours. The app also sends anonymous usage analytics and crash reports to Firebase (a Google service). No advertising, no third-party data sharing.</p>
         </div>
 
         <h2>1. Information Collection</h2>
-        <p>Cursed Screen does <strong>not</strong> collect any personally identifying information. The app does not require account creation, does not ask for your email, phone number, or any identifying details, and does not access your contacts, photos, messages, browsing history, microphone, camera, or location.</p>
+        <p>Cursed Screen does <strong>not</strong> collect any personally identifying information. The app does not require account creation, does not ask for your phone number or any identifying details, and does not access your contacts, photos, messages, browsing history, microphone, camera, or location. The one exception is an optional email address used solely to reset a forgotten Child Lock PIN &mdash; see Section 4.</p>
         <p>During setup, the app may ask for your first name to personalize the on-screen messages. Providing it is optional. The name stays on your device in memory only &mdash; it is never saved, never transmitted, and not linked to any identifier. Our analytics record only whether a name was entered, never the name itself.</p>
-        <p>The app does send anonymous usage analytics and crash diagnostics to Firebase &mdash; see Sections 2 and 5.</p>
+        <p>The app does send anonymous usage analytics and crash diagnostics to Firebase &mdash; see Sections 2 and 6.</p>
 
         <h2>2. Analytics and Crash Reporting</h2>
         <p>Cursed Screen uses <strong>Firebase Analytics</strong> and <strong>Firebase Crashlytics</strong> (both Google services) to collect anonymous diagnostic data that helps us understand how the product is used and fix bugs.</p>
@@ -129,7 +129,18 @@
         </ul>
         <p>No permission is used to access contacts, camera, microphone, location, files, or any other sensitive data.</p>
 
-        <h2>4. Data Storage</h2>
+        <h2>4. Child Lock and Recovery Email</h2>
+        <p>Child Lock lets you hand your phone to a child with a timer and a list of apps they are allowed to open.</p>
+        <p><strong>We collect no information about your child.</strong> Nothing your child does is sent to us. The timer, the list of allowed apps, and the record of time used all stay on your phone, and are excluded from cloud backup and from device-to-device transfer.</p>
+        <p>Your Child Lock PIN is stored on your phone in scrambled (hashed) form. It is never sent to us, and we cannot read or recover it.</p>
+        <p><strong>Recovery email.</strong> If you forget your PIN, we can email you a code to set a new one. You may either save an address in advance from the Child Lock menu, or type one at the moment you ask for a reset. Both are optional &mdash; Child Lock works without either.</p>
+        <ul>
+            <li><strong>What we do with it:</strong> we store the address on our servers only to send you the code, to limit how often codes can be sent to the same address, and to email you if your Child Lock PIN is changed &mdash; so you have a record outside the phone.</li>
+            <li><strong>How long we keep it:</strong> we delete it within 24 hours. Reset codes stop working after 15 minutes, so there is no reason to keep anything longer. The PIN-change notice stores only a scrambled form of the address, never the address itself.</li>
+            <li><strong>Who else sees it:</strong> the address passes through two infrastructure providers &mdash; Google Firebase, which runs our servers, and Brevo, which delivers the email. Neither uses it for any other purpose. We do not sell or share it, and we never advertise to it.</li>
+        </ul>
+
+        <h2>5. Data Storage</h2>
         <p>App settings and on-device state are stored locally using Android's SharedPreferences. This includes:</p>
         <ul>
             <li>Daily screen-time history as measured by the app.</li>
@@ -139,22 +150,25 @@
         </ul>
         <p>The anonymous analytics and crash data described in Section 2 are processed by Google Firebase. Uninstalling the app permanently deletes all on-device data.</p>
 
-        <h2>5. Third-Party Services</h2>
-        <p>Cursed Screen uses the following Google services:</p>
+        <h2>6. Third-Party Services</h2>
+        <p>Cursed Screen uses the following third-party services:</p>
         <ul>
             <li><strong>Google Play Billing</strong> &mdash; Processes in-app purchases and auto-renewing subscriptions (monthly and annual). Subscriptions renew automatically at the price shown until you cancel them in Google Play; you can manage or cancel anytime from your Google Play account. Billing is handled entirely by Google Play and subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
             <li><strong>Firebase Analytics</strong> &mdash; Collects anonymous product analytics as described in Section 2. Subject to <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase's Privacy and Security policy</a>.</li>
             <li><strong>Firebase Crashlytics</strong> &mdash; Collects anonymous crash and diagnostic reports as described in Section 2. Subject to the same Firebase policy.</li>
+            <li><strong>Firebase (Cloud Functions and Firestore)</strong> &mdash; Runs the servers that generate and check Child Lock PIN reset codes, and briefly stores the recovery email address described in Section 4.</li>
+            <li><strong>Brevo</strong> &mdash; Delivers the Child Lock PIN emails described in Section 4. Brevo receives the address only to deliver that message. Subject to <a href="https://www.brevo.com/legal/privacypolicy/" target="_blank" rel="noopener">Brevo&rsquo;s Privacy Policy</a>.</li>
         </ul>
         <p>The app does <strong>not</strong> integrate any advertising networks, third-party data brokers, or non-Google trackers.</p>
 
-        <h2>6. Children's Privacy</h2>
-        <p>Cursed Screen is not directed at children under the age of 13. The app does not knowingly collect any data from anyone we know to be under 13.</p>
+        <h2>7. Children&rsquo;s Privacy</h2>
+        <p>Cursed Screen is not directed at children under the age of 13, and the app does not knowingly collect any data from anyone we know to be under 13.</p>
+        <p>Child Lock is a tool for a parent or guardian, set up and unlocked by them on their own phone. It collects nothing whatsoever about the child: no name, no account, no usage data, nothing transmitted. Everything it records stays on the device.</p>
 
-        <h2>7. Changes to This Policy</h2>
+        <h2>8. Changes to This Policy</h2>
         <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated revision date. Continued use of the app after changes constitutes acceptance of the revised policy.</p>
 
-        <h2>8. Contact</h2>
+        <h2>9. Contact</h2>
         <p>If you have any questions or concerns about this Privacy Policy or the app, please contact us at:</p>
         <p><a href="mailto:zenlifedesigners@gmail.com">zenlifedesigners@gmail.com</a></p>
 
